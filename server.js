@@ -5,6 +5,7 @@ const socketio = require('socket.io');
 const formatMessage = require('./utils/messages')
 const { userJoin, getCurrentUser, userLeave, getRoomUsers } = require('./utils/users')
 
+require("dotenv").config({ path: "./config/.env" });
 
 const app = express();
 const server = http.createServer(app);
@@ -57,10 +58,10 @@ socket.on('disconnect', () =>{
 })
 
 
-const PORT = 3000 || process.env.PORT;
 
 
 
 
 
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+server.listen(process.env.PORT, () => console.log(`Server running on port ${process.env.PORT}`));
