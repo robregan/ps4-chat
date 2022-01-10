@@ -9,3 +9,5 @@ Things to add:
   - add Auth for login but still have a 'demo' mode
   - maybe connect to a React frontend
   - make the css nicer
+  - allow users to create their own chatrooms
+  - add reactions to comments
