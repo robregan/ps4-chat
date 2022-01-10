@@ -38,8 +38,9 @@ socket.broadcast
     // Listen for chatMessage
     socket.on('chatMessage', msg =>{
         const user = getCurrentUser(socket.id)
-
+        if(user){
         io.to(user.room).emit('message', formatMessage(user.username, msg))
+    }
     })
 // Runs when client Disconnects (needs to be inside connection)
 socket.on('disconnect', () =>{
@@ -53,7 +54,6 @@ socket.on('disconnect', () =>{
             })
     }   
     })
-
 
 })
 
